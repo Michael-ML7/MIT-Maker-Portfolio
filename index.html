@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Lam 🇭🇰 | Maker Portfolio</title>
+    <title>Michael Lam 🇭🇰 | MIT Maker Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #e63946; /* Red */
-            --secondary: #2a9d8f; /* Green */
+            --secondary: #26b069; /* Green */
             --dark: #1d3557;
             --light: #f1faee;
             --gray: #f8f9fa;
@@ -177,6 +177,45 @@
             font-weight: 600;
         }
 
+        .project-grade-red {
+            display: inline-block;
+            background: rgba(230, 57, 70, 0.15);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(230, 57, 70, 0.3);
+        }
+
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(230, 57, 70, 0.3);
+        }
+
+        .live-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
         .project-description {
             padding: 20px 25px;
             color: #555;
@@ -238,7 +277,7 @@
         .other-project {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             padding: 20px 0;
             border-bottom: 1px solid var(--gray);
         }
@@ -251,11 +290,24 @@
             font-size: 1.3rem;
             margin-bottom: 5px;
             color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .other-project-desc {
             color: #666;
             font-size: 0.95rem;
+            margin-top: 5px;
+            margin-bottom: 8px;
+        }
+
+        .button-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 200px;
+            align-items: flex-end;
         }
 
         /* Footer - Simplified with colored icons */
@@ -324,7 +376,7 @@
             .other-project {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 15px;
+                gap: 20px;
             }
             
             .social-icons {
@@ -335,6 +387,20 @@
                 width: 45px;
                 height: 45px;
             }
+            
+            .other-project-info h3 {
+                flex-wrap: wrap;
+            }
+            
+            .button-stack {
+                width: 100%;
+                align-items: stretch;
+            }
+            
+            .button-stack .btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -344,7 +410,7 @@
         <div class="container header-container">
             <a href="#" class="logo">
                 <i class="fas fa-cogs"></i>
-                Michael Lam's Maker Portfolio
+                Michael Lam's MIT Maker Portfolio
             </a>
             <nav>
                 <ul>
@@ -360,7 +426,7 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>MIT <span class="highlight">Maker</span> Portfolio</h1>
+            <h1>Michael's MIT <span class="highlight">Maker</span> Portfolio</h1>
             <p>AI, robotics, and creative problem-solving projects</p>
             <a href="#projects" class="btn">
                 <i class="fas fa-arrow-down"></i>
@@ -398,7 +464,7 @@
                     <div class="project-links">
                         <a href="https://github.com/Michael-ML7/PosturePal" target="_blank" class="btn">
                             <i class="fab fa-github"></i>
-                            View Code
+                            View Repository
                         </a>
                         <a href="https://michael-ml7.github.io/MIT-Maker-Portfolio/PosturePal-Slides.pdf" target="_blank" class="btn btn-secondary">
                             <i class="fas fa-external-link-alt"></i>
@@ -412,7 +478,7 @@
                     <div class="project-header">
                         <h3 class="project-title">VEX Score-Margin Prediction</h3>
                         <span class="project-grade">Grade 11</span>
-                        <p>Data-driven match analysis for VEX Robotics</p>
+                        <p>Data-driven match analysis for VEX Robotics Worlds '25</p>
                     </div>
                     <div class="project-description">
                         <p>Analyzes historical match data, calculating weighted performance metrics like win rates and scoring averages.</p>
@@ -421,11 +487,11 @@
                     <div class="project-links">
                         <a href="https://github.com/Michael-ML7/vrc_teamanalysis" target="_blank" class="btn">
                             <i class="fab fa-github"></i>
-                            View Code
+                            View Repository
                         </a>
                         <a href="https://michael-ml7.github.io/vrc_teamanalysis/" target="_blank" class="btn btn-secondary">
                             <i class="fas fa-external-link-alt"></i>
-                            Website
+                            Summary Website
                         </a>
                     </div>
                 </div>
@@ -441,9 +507,15 @@
                 <!-- Timelit -->
                 <div class="other-project">
                     <div class="other-project-info">
-                        <h3>Timelit</h3>
-                        <span class="project-tag">Startup (Grade 12)</span>
-                        <p class="other-project-desc">Automatic schedule organizer startup. Raised $2k USD. Work in progress.</p>
+                        <h3>
+                            <span class="live-dot"></span>
+                            Timelit
+                        </h3>
+                        <span class="live-indicator">
+                            <span class="live-dot"></span>
+                            Grade 12, ongoing
+                        </span>
+                        <p class="other-project-desc">AI-powered schedule organizer startup. Raised $2k USD. Work in progress.</p>
                     </div>
                     <a href="https://www.instagram.com/timelit.ai" target="_blank" class="btn btn-outline">
                         <i class="fab fa-instagram"></i>
@@ -451,16 +523,38 @@
                     </a>
                 </div>
 
+                <!-- VEX Robotics -->
+                <div class="other-project">
+                    <div class="other-project-info">
+                        <h3>VEX Robotics Competition (39400A MS 2022-24, 86254B HS 2024-25)</h3>
+                        <span class="project-grade">Grade 8-11</span>
+                        <p class="other-project-desc">Team Leader, Strategist, Programmer (23-25), Builder (22-24)</p>
+                        <p class="other-project-desc">World Championship 2025, Tournament Champ @ PAS-VEX Signature Event 2024</p>
+                        <p class="other-project-desc">Tournament Finalist (2024-25), Design Award (2023-24) & Judges' Award (2022-23) @ HK Regional</p>
+                    </div>
+                    <div class="button-stack">
+                        <a href="https://michael-ml7.github.io/MIT-Maker-Portfolio/VRC%202324%20Over%20Under%20-%2039400A%20Engineering%20Notebook.pdf" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-external-link-alt"></i>
+                            2425 High Stakes Notebook
+                        </a>
+                        <a href="https://michael-ml7.github.io/MIT-Maker-Portfolio/VRC%202425%20High%20Stakes%20-%2086254B%20Engineering%20Notebook.pdf" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-external-link-alt"></i>
+                            2324 Over Under Notebook
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Mail Merge -->
                 <div class="other-project">
                     <div class="other-project-info">
                         <h3>LSC Christmas Ball Mail Merge</h3>
                         <span class="project-grade">Grade 11</span>
-                        <p class="other-project-desc">Excel-based email automation with HTML styling to overcome platform limits</p>
+                        <p class="other-project-desc">Python & Excel-based email automation with HTML styling to overcome Google's 100 email per day limits</p>
+                        <p class="other-project-desc">As the V-Chairman of the Student Asso. and lead organizer of the Annual Christmas Ball 2024, I have to send emails to ~1k attendees.</p>
                     </div>
-                    <a href="https://github.com/Michael-ML7/LSC-Christmas-Ball-Mail-Merge-2024" target="_blank" class="btn btn-outline">
+                    <a href="https://github.com/Michael-ML7/LSC-Christmas-Ball-Mail-Merge-2024" target="_blank" class="btn">
                         <i class="fab fa-github"></i>
-                        View Code
+                        View Repo
                     </a>
                 </div>
 
@@ -471,12 +565,12 @@
                         <span class="project-grade">Grade 8</span>
                         <p class="other-project-desc">Early robotics project exploring hardware programming</p>
                     </div>
-                    <div>
+                    <div class="button-stack">
                         <a href="https://michael-ml7.github.io/ml7/arduino_lunar_vehicle.html" target="_blank" class="btn btn-outline">
                             <i class="fas fa-external-link-alt"></i>
                             Project Page
                         </a>
-                        <a href="https://github.com/Michael-ML7/ml7/blob/main/arduino_lunar_vehicle.html" target="_blank" class="btn">
+                        <a href="https://github.com/Michael-ML7/ml7/blob/main/special_files/lunar_vehicle/lunar_car.ino" target="_blank" class="btn">
                             <i class="fab fa-github"></i>
                             View Code
                         </a>
